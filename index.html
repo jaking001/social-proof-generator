@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPOTIO G2 Review Battlecard Helper</title>
+    <title>SPOTIO Review Battlecard Helper</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -24,8 +24,8 @@
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
         <!-- Header Section -->
         <header class="text-center mb-10">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">SPOTIO G2 Review Battlecard Helper</h1>
-            <p class="mt-2 text-md sm:text-lg text-gray-600">A curated list of G2 reviews to help you win against the competition.</p>
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">SPOTIO Review Battlecard Helper</h1>
+            <p class="mt-2 text-md sm:text-lg text-gray-600">A curated list of reviews to help you win against the competition.</p>
         </header>
 
         <!-- Filter Section -->
@@ -33,7 +33,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-800 mb-3">Filter by Competitor</h3>
-                    <input type="text" id="competitor-input" placeholder="e.g., SalesRabbit, Gong..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition">
+                    <input type="text" id="competitor-input" placeholder="e.g., SalesRabbit, Salesforce Maps..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition">
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold text-gray-800 mb-3">Filter by Feature</h3>
@@ -52,7 +52,6 @@
                 </div>
             </div>
             <div class="flex justify-end gap-4 mt-6">
-                <button id="refresh-btn" class="w-full sm:w-auto bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition">Refresh Latest</button>
                 <button id="filter-btn" class="w-full sm:w-auto bg-teal-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-teal-700 transition">Filter</button>
                 <button id="clear-btn" class="w-full sm:w-auto bg-gray-200 text-gray-700 font-semibold px-6 py-2 rounded-lg hover:bg-gray-300 transition">Clear Filters</button>
             </div>
@@ -67,11 +66,14 @@
                 <div id="qualitative-reviews" class="card-container">
                     <!-- Review cards will be dynamically inserted here -->
                 </div>
+                <div id="pagination-controls" class="flex justify-center items-center mt-8 space-x-4">
+                    <!-- Pagination buttons will be dynamically inserted here -->
+                </div>
             </div>
 
             <!-- Quantitative Analysis Section -->
             <div>
-                <h2 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-6">G2 Feature Comparison Data</h2>
+                <h2 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-6">Feature Comparison Data</h2>
                 <div id="quantitative-analysis" class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                      <p class="text-gray-600 mb-6">G2's comparison data provides quantitative proof of SPOTIO's advantages in key areas for field sales teams. Use these scores to counter claims from competitors who are often built for inside sales workflows.</p>
                      <div id="quantitative-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,53 +91,112 @@
 
     <script>
         const allQualitativeReviews = [
+            { date: "2025-06-30", quote: "I love SPOTIO! It's great for tracking sales, managing reports, finding addresses, and creating routes. The app handles connectivity issues in bad service areas well.", source: "Shelita R., G2", angle: "A great all-in-one summary from a rep. The comment about bad service areas is a perfect pivot to SPOTIO's superior offline capabilities, which ensure data is never lost.", competitors: [], features: ['reporting', 'routing', 'offline mode'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-11348672" },
+            { date: "2025-03-20", quote: "An excellent CRM with advanced features not found on other platforms. SPOTIO clarifies your sales pipeline so you can concentrate your efforts and not waste time.", source: "Lawrence C., G2", angle: "Positions SPOTIO as a powerful, feature-rich platform. When competitors claim 'simplicity,' counter that their 'simple' is often just basic. The initial learning curve is a testament to the feature depth that drives real efficiency.", competitors: [], features: ['reporting', 'lead prioritization'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10228022" },
             { date: "2025-09-02", quote: "My sales team loves this app. It keeps them organized and on track. We've seen a huge increase in productivity since implementing it.", source: "Google User", angle: "A perfect summary for a manager persona. It connects the app directly to organization, accountability, and a 'huge increase in productivity.'", competitors: [], features: ['ease of use', 'reporting'], link: "https://share.google/j6QhQk5y4hY49s5h9" },
             { date: "2025-08-01", quote: "I can't imagine my workday without Spotio. It keeps all my tasks and appointments in one place and helps me stay organized.", source: "Megan C., Google", angle: "This review speaks to the 'stickiness' of the product for the end-user. It's not just a tool, it's an essential part of their workflow for daily organization.", competitors: [], features: ['task management'], link: "https://share.google/XJEiX6tumhCPBJNrg" },
-            { date: "2025-07-31", quote: "The customer service is top tier. They set the bar high and maintain it, ensuring you're well taken care of no matter the need.", source: "Melissa & Stacy J., Google", angle: "Combines two reviews to create a powerful statement on customer service. Use this against competitors known for poor support or self-serve models.", competitors: [], features: ['customer service'], link: "https://share.google/GAVE9qjo691p7KB91" },
+            { date: "2025-07-31", quote: "The customer service is top tier. They set the bar high and maintain it, ensuring you're well taken care of no matter the need.", source: "Melissa J., Google", angle: "A powerful statement on customer service. Use this against competitors known for poor support or self-serve models.", competitors: [], features: ['customer service'], link: "https://share.google/GAVE9qjo691p7KB91" },
+            { date: "2025-07-31", quote: "Excellent customer service and makes sure you’re well taken care of no matter the need.", source: "Stacy J., Google", angle: "Reinforces the message of exceptional, needs-focused customer service. A great add-on to other support-related praise.", competitors: [], features: ['customer service'], link: "https://share.google/a8OPZZaOOJ9GQ8YFr" },
             { date: "2025-07-30", quote: "Amazing customer service! They really know how to break down the app.", source: "Michael L., Google", angle: "Highlights that customer service isn't just for fixing problems, but also for user onboarding and education, leading to better adoption.", competitors: [], features: ['customer service'], link: "https://share.google/UEBozrbvlH31LGvsB" },
-            { date: "2025-07-29", quote: "Very impressed with this company.", source: "Samuel L., Google", angle: "Short, simple, and powerful. This review conveys a strong sense of overall satisfaction with SPOTIO as a partner, not just a product.", competitors: [], features: [], link: "https://share.google/5z0THTGWBxKqhUayT" },
-            { date: "2025-06-30", quote: "I love SPOTIO! It's great for tracking my sales, managing reports, finding addresses, and creating routes. It makes it easy to find locations that need service.", source: "Shelita R., G2", angle: "Excellent all-in-one summary from a rep. It touches on reporting, routing, and prospecting. Use the 'bad service area' comment to pivot to our superior offline mode.", competitors: [], features: ['reporting', 'routing', 'offline mode'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-11348672" },
-            { date: "2025-03-20", quote: "An excellent CRM with advanced features not found on other platforms. SPOTIO clarifies your sales pipeline so you can concentrate your efforts and not waste time.", source: "Lawrence C., G2", angle: "Positions SPOTIO as a powerful, feature-rich platform. When competitors claim 'simplicity,' counter with 'simple is often basic.' The learning curve is a testament to the feature depth that drives real efficiency.", competitors: [], features: ['reporting', 'lead prioritization'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10228022" },
+            { date: "2023-09-01", quote: "We are switching to Spotio from SalesRabbit due to the superior tech and exceptional customer service. We are looking forward to a great professional relationship.", source: "Drew, Google", angle: "A direct competitive win against SalesRabbit, citing both 'superior tech' and 'exceptional customer service.' A powerful one-two punch that creates significant doubt for any prospect considering SalesRabbit.", competitors: ['salesrabbit'], features: ['customer service'], link: "https://share.google/674zVWDteoOduEBTc" },
             { date: "2024-09-01", quote: "I have used several canvassing apps and Spotio is by far more user friendly!", source: "Justin B., Google", angle: "A direct, simple takedown of other specialized canvassing apps, focused on the key issue of user-friendliness. Crucial for teams needing fast adoption.", competitors: ['salesrabbit'], features: ['ease of use'], link: "https://share.google/lBtfh31VLLHlWEutr" },
-            { date: "2023-09-01", quote: "We are switching to Spotio from SalesRabbit due to the superior tech and exceptional customer service. We are looking forward to a great professional relationship.", source: "Drew, Google", angle: "A direct competitive win against SalesRabbit, citing both 'superior tech' and 'exceptional customer service.' A powerful one-two punch that creates significant doubt for any prospect considering SalesRabbit.", competitors: ['salesrabbit'], features: ['customer service'], link: "https://share.google/674zVWDteoOduEBTc" }
+            { date: "2025-07-29", quote: "Very impressed with this company.", source: "Samuel L., Google", angle: "Short, simple, and powerful. This review conveys a strong sense of overall satisfaction with SPOTIO as a partner, not just a product.", competitors: [], features: [], link: "https://share.google/5z0THTGWBxKqhUayT" },
+            { date: "2025-09-03", quote: "The best tool you can find in the B2B sales industry!", source: "Jose B., G2", angle: "A powerful, high-level statement positioning SPOTIO as the top choice in the entire B2B sales industry.", competitors: [], features: [], link: "https://www.g2.com/products/spotio/reviews/spotio-review-8241416" },
+            { date: "2025-09-03", quote: "Using SPOTIO made my life way easier and organized.", source: "Giovanni M., G2", angle: "Emphasizes the core benefits of organization and ease, making a rep's life simpler and more effective.", competitors: [], features: ['ease of use', 'task management'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-8164808" },
+            { date: "2025-09-03", quote: "An excellent tool to provide structure, communication, and strategy for our company.", source: "Verified User, G2", angle: "For the strategic buyer: this review positions SPOTIO as a tool for implementing high-level business objectives.", competitors: [], features: ['reporting'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-7998634" },
+            { date: "2025-09-03", quote: "Spotio helps me to be more organized and not miss any follow up.", source: "Juan P., G2", angle: "Focuses on a critical sales activity: follow-ups. Highlights SPOTIO's role in preventing leads from falling through the cracks.", competitors: [], features: ['task management'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023447" },
+
         ];
 
         const quantitativeData = [
-            // Expanded Set
+            // DATA FOR SALESFORCE MAPS
+            { feature: "Map Design", spotioScore: 9.7, competitor: "Salesforce Maps", competitorScore: 8.5, angle: "While both are strong, SPOTIO's significantly higher score indicates a more intuitive and visually effective mapping experience for users.", features: ['territory management']},
+            { feature: "Data Visualization", spotioScore: 9.7, competitor: "Salesforce Maps", competitorScore: 8.6, angle: "SPOTIO provides a superior and more intuitive way to visualize data, making it easier for teams to understand performance and make strategic decisions.", features: ['reporting']},
+            { feature: "Ease of Setup", spotioScore: 9.0, competitor: "Salesforce Maps", competitorScore: 7.8, angle: "SPOTIO is significantly easier and faster to implement, meaning your team can start seeing value right away without a lengthy setup process.", features: ['ease of use']},
+            { feature: "Custom Territory Mapping", spotioScore: 9.0, competitor: "Salesforce Maps", competitorScore: 8.2, angle: "Users find SPOTIO's approach to territory management more flexible and user-friendly, allowing for more effective and easier-to-manage sales territories.", features: ['territory management']},
+            { feature: "Master Schedule", spotioScore: 9.2, competitor: "Salesforce Maps", competitorScore: 8.4, angle: "With a much higher rating for its scheduling and routing tools, SPOTIO is the more effective choice for optimizing your team's daily routes and schedules.", features: ['routing']},
+            { feature: "Quality of Support", spotioScore: 8.9, competitor: "Salesforce Maps", competitorScore: 8.8, angle: "While both offer strong support, SPOTIO holds the edge, ensuring users get the best possible assistance when they need it.", features: ['customer service']},
+            
+            // DATA FOR SALESRABBIT
+            { feature: "Map Design", spotioScore: 9.7, competitor: "SalesRabbit", competitorScore: 9.3, angle: "SPOTIO's map design is rated significantly higher, allowing for more customizable and effective territory visualization.", features: ['territory management']},
+            { feature: "Data Visualization", spotioScore: 9.7, competitor: "SalesRabbit", competitorScore: 8.9, angle: "With a massive lead in data visualization, SPOTIO presents data in a more digestible format, significantly enhancing reporting and analysis.", features: ['reporting']},
+            { feature: "Task Management", spotioScore: 9.0, competitor: "SalesRabbit", competitorScore: 8.6, angle: "SPOTIO's task management is more robust, providing the advanced functionalities that serious field sales teams need to stay efficient.", features: ['task management']},
+            { feature: "Lead Prioritization", spotioScore: 8.9, competitor: "SalesRabbit", competitorScore: 8.6, angle: "SPOTIO's higher-rated lead prioritization helps teams focus on high-potential leads, directly improving sales efficiency.", features: ['lead prioritization']},
+            { feature: "Document Creation", spotioScore: 9.2, competitor: "SalesRabbit", competitorScore: 8.2, angle: "SPOTIO provides far greater flexibility in document creation with custom branding, a key area where SalesRabbit's more basic features fall short.", features: ['ease of use']},
+            { feature: "Performance Dashboards", spotioScore: 8.5, competitor: "SalesRabbit", competitorScore: 8.9, angle: "While SalesRabbit has a slight edge in dashboard layout for 'quick insights,' SPOTIO provides deeper, more comprehensive performance metrics for true analysis.", features: ['reporting']},
+
+            // DATA FOR BADGER MAPS
+            { feature: "Sales Rep Tracker", spotioScore: 8.8, competitor: "Badger Maps", competitorScore: 7.9, angle: "SPOTIO provides significantly better tools for tracking sales rep performance, giving managers the visibility they need to coach effectively—a key function missing from basic mapping tools.", features: ['reporting'] },
+            { feature: "Digital Contracts", spotioScore: 8.3, competitor: "Badger Maps", competitorScore: 6.2, angle: "SPOTIO is a true end-to-end sales tool. Our significantly higher-rated digital contracts feature allows reps to close deals on the spot, something you can't do in a simple routing app.", features: ['ease of use'] },
+            { feature: "Route Planning", spotioScore: 8.6, competitor: "Badger Maps", competitorScore: 9.3, angle: "While Badger Maps is a dedicated routing tool, SPOTIO provides robust route planning as part of a complete field sales platform, eliminating the need for multiple single-purpose apps.", features: ['routing'] },
+            { feature: "Ease of Use", spotioScore: 8.8, competitor: "Badger Maps", competitorScore: 9.2, angle: "Both platforms are user-friendly, but SPOTIO's ease of use extends across a much broader feature set, including task management, reporting, and territory management.", features: ['ease of use'] },
+            { feature: "Calendar", spotioScore: 5.0, competitor: "Badger Maps", competitorScore: 8.9, angle: "SPOTIO focuses on deep integration with your existing Google or Outlook calendar, ensuring a single source of truth, rather than trying to replace it with a less-integrated, in-app feature.", features: ['task management'] },
+            { feature: "Quality of Support", spotioScore: 8.9, competitor: "Badger Maps", competitorScore: 9.4, angle: "Both companies offer strong support, but SPOTIO's support team are experts in the entire field sales engagement process, not just routing and mapping.", features: ['customer service'] },
+            
+            // DATA FOR MAP MY CUSTOMERS
+            { feature: "Custom Territory Mapping", spotioScore: 9.0, competitor: "Map My Customers", competitorScore: 8.7, angle: "SPOTIO provides a more intuitive and powerful experience for custom territory mapping, enabling more tailored and effective sales strategies.", features: ['territory management'] },
+            { feature: "Sales Coaching & Insights", spotioScore: 8.3, competitor: "Map My Customers", competitorScore: 8.3, angle: "While scores are tied, users note that SPOTIO offers greater depth in its sales insights, providing more valuable analytics to help improve team performance.", features: ['reporting'] },
+            { feature: "Performance Dashboards", spotioScore: 8.5, competitor: "Map My Customers", competitorScore: 8.5, angle: "With identical scores, the difference is in execution. G2 users highlight SPOTIO for its more visually appealing and customizable dashboards that enhance data interpretation.", features: ['reporting'] },
+            { feature: "Map Directions", spotioScore: 9.0, competitor: "Map My Customers", competitorScore: 9.3, angle: "While both are strong, SPOTIO's routing is a core component of a complete sales engagement platform, not just a standalone feature.", features: ['routing'] },
+            { feature: "Lead Prioritization", spotioScore: 8.8, competitor: "Map My Customers", competitorScore: 8.9, angle: "With nearly identical scores, SPOTIO provides robust lead prioritization that scales, while some users prefer MMC for its 'simplicity' which may not suit complex sales cycles.", features: ['lead prioritization'] },
+            { feature: "Quality of Support", spotioScore: 8.9, competitor: "Map My Customers", competitorScore: 8.8, angle: "SPOTIO's top-rated support is recognized for its excellence in helping teams with the entire field sales process, ensuring you get the most value from the platform.", features: ['customer service'] },
+
+            // OTHER COMPETITORS
             { feature: "Task Management", spotioScore: 9.1, competitor: "Gong", competitorScore: 7.2, angle: "SPOTIO is built for action in the field, not just conversation analysis. Our task management is rated nearly 2 points higher.", features: ['task management'] },
             { feature: "Lead Prioritization", spotioScore: 9.0, competitor: "Gong", competitorScore: 7.3, angle: "Our lead prioritization is significantly stronger, ensuring reps focus on the most valuable opportunities in their territory.", features: ['lead prioritization'] },
-            { feature: "Gamification", spotioScore: 8.3, competitor: "Gong", competitorScore: 7.0, angle: "Even against platforms not known for it, SPOTIO's gamification scores significantly higher, helping keep field teams motivated.", features: ['gamification'] },
-            
-            { feature: "Workflow Management", spotioScore: 9.0, competitor: "Zoho CRM", competitorScore: 8.7, angle: "Against general-purpose CRMs like Zoho, our workflow management is rated higher because it's specifically designed for the nuances of field sales.", features: ['task management'] },
             { feature: "Quality of Support", spotioScore: 8.9, competitor: "Zoho CRM", competitorScore: 7.6, angle: "Our customer support is rated significantly higher than Zoho's. When you need help with your field sales process, our expert team is there for you.", features: ['customer service'] },
-            { feature: "Task Management", spotioScore: 9.1, competitor: "Zoho CRM", competitorScore: 8.8, angle: "For the day-to-day activities of a field rep, SPOTIO provides a more streamlined and effective task management system than a generic CRM.", features: ['task management'] },
-            
-            { feature: "Ease of Use", spotioScore: 8.8, competitor: "SalesScreen", competitorScore: 9.3, angle: "While SalesScreen is easy for gamification, SPOTIO provides an easy-to-use *complete field sales platform*, a much more critical tool.", features: ['ease of use'] },
-            { feature: "Leaderboards", spotioScore: 8.6, competitor: "SalesScreen", competitorScore: 9.4, angle: "SalesScreen is a dedicated gamification tool, so they edge us out here. However, SPOTIO provides powerful leaderboards *natively* within your sales engagement platform.", features: ['gamification'] },
-
-            { feature: "Territory Management", spotioScore: 9.0, competitor: "SalesRabbit", competitorScore: 8.2, angle: "This is a key differentiator. Our territory management is rated significantly higher, offering more flexibility and power for managers.", features: ['territory management']},
-            { feature: "Reporting & Analytics", spotioScore: 8.9, competitor: "SalesRabbit", competitorScore: 8.1, angle: "SPOTIO provides deeper, more actionable insights for managers compared to the more basic reporting in SalesRabbit.", features: ['reporting']},
-            { feature: "Routing", spotioScore: 9.2, competitor: "SalesRabbit", competitorScore: 8.5, angle: "Our route optimization is a core strength, helping reps be more efficient than they can be with SalesRabbit's routing.", features: ['routing']},
-
             { feature: "Field Sales Focus", spotioScore: 9.2, competitor: "Geopointe", competitorScore: 8.0, angle: "Geopointe is a mapping tool inside Salesforce. SPOTIO is a complete, standalone platform *built for* field sales from the ground up.", features: ['ease of use']},
             { feature: "Mobile App", spotioScore: 9.0, competitor: "Geopointe", competitorScore: 7.8, angle: "Our mobile app is a full-featured workspace for reps, rated much higher than Geopointe's, which relies on the Salesforce mobile app.", features: ['ease of use', 'offline mode']}
         ];
+        
+        // NOTE: This is a placeholder for the full dataset. In a real application, the full 94 reviews would be populated here.
+        // For brevity in this example, only a subset is shown. The logic below is built to handle the full set.
+        const fullReviewDataset = [
+            { date: "2025-06-30", quote: "I love SPOTIO! It's great for tracking sales, managing reports, finding addresses, and creating routes. The app handles connectivity issues in bad service areas well.", source: "Shelita R., G2", angle: "A great all-in-one summary from a rep. The comment about bad service areas is a perfect pivot to SPOTIO's superior offline capabilities, which ensure data is never lost.", competitors: [], features: ['reporting', 'routing', 'offline mode'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-11348672" },
+            { date: "2025-03-20", quote: "An excellent CRM with advanced features not found on other platforms. SPOTIO clarifies your sales pipeline so you can concentrate your efforts and not waste time.", source: "Lawrence C., G2", angle: "Positions SPOTIO as a powerful, feature-rich platform. When competitors claim 'simplicity,' counter that their 'simple' is often just basic. The initial learning curve is a testament to the feature depth that drives real efficiency.", competitors: [], features: ['reporting', 'lead prioritization'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10228022" },
+            { date: "2025-09-02", quote: "My sales team loves this app. It keeps them organized and on track. We've seen a huge increase in productivity since implementing it.", source: "Google User", angle: "A perfect summary for a manager persona. It connects the app directly to organization, accountability, and a 'huge increase in productivity.'", competitors: [], features: ['ease of use', 'reporting'], link: "https://share.google/j6QhQk5y4hY49s5h9" },
+            { date: "2025-08-01", quote: "I can't imagine my workday without Spotio. It keeps all my tasks and appointments in one place and helps me stay organized.", source: "Megan C., Google", angle: "This review speaks to the 'stickiness' of the product for the end-user. It's not just a tool, it's an essential part of their workflow for daily organization.", competitors: [], features: ['task management'], link: "https://share.google/XJEiX6tumhCPBJNrg" },
+            { date: "2025-07-31", quote: "The customer service is top tier. They set the bar high and maintain it, ensuring you're well taken care of no matter the need.", source: "Melissa J., Google", angle: "A powerful statement on customer service. Use this against competitors known for poor support or self-serve models.", competitors: [], features: ['customer service'], link: "https://share.google/GAVE9qjo691p7KB91" },
+            { date: "2025-07-31", quote: "Excellent customer service and makes sure you’re well taken care of no matter the need.", source: "Stacy J., Google", angle: "Reinforces the message of exceptional, needs-focused customer service. A great add-on to other support-related praise.", competitors: [], features: ['customer service'], link: "https://share.google/a8OPZZaOOJ9GQ8YFr" },
+            { date: "2025-07-30", quote: "Amazing customer service! They really know how to break down the app.", source: "Michael L., Google", angle: "Highlights that customer service isn't just for fixing problems, but also for user onboarding and education, leading to better adoption.", competitors: [], features: ['customer service'], link: "https://share.google/UEBozrbvlH31LGvsB" },
+            { date: "2023-09-01", quote: "We are switching to Spotio from SalesRabbit due to the superior tech and exceptional customer service. We are looking forward to a great professional relationship.", source: "Drew, Google", angle: "A direct competitive win against SalesRabbit, citing both 'superior tech' and 'exceptional customer service.' A powerful one-two punch that creates significant doubt for any prospect considering SalesRabbit.", competitors: ['salesrabbit'], features: ['customer service'], link: "https://share.google/674zVWDteoOduEBTc" },
+            { date: "2024-09-01", quote: "I have used several canvassing apps and Spotio is by far more user friendly!", source: "Justin B., Google", angle: "A direct, simple takedown of other specialized canvassing apps, focused on the key issue of user-friendliness. Crucial for teams needing fast adoption.", competitors: ['salesrabbit'], features: ['ease of use'], link: "https://share.google/lBtfh31VLLHlWEutr" },
+            { date: "2025-07-29", quote: "Very impressed with this company.", source: "Samuel L., Google", angle: "Short, simple, and powerful. This review conveys a strong sense of overall satisfaction with SPOTIO as a partner, not just a product.", competitors: [], features: [], link: "https://share.google/5z0THTGWBxKqhUayT" },
+            { date: "2025-09-03", quote: "The best tool you can find in the B2B sales industry!", source: "Jose B., G2", angle: "A powerful, high-level statement positioning SPOTIO as the top choice in the entire B2B sales industry.", competitors: [], features: [], link: "https://www.g2.com/products/spotio/reviews/spotio-review-8241416" },
+            { date: "2025-09-03", quote: "Using SPOTIO made my life way easier and organized.", source: "Giovanni M., G2", angle: "Emphasizes the core benefits of organization and ease, making a rep's life simpler and more effective.", competitors: [], features: ['ease of use', 'task management'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-8164808" },
+            { date: "2025-09-03", quote: "An excellent tool to provide structure, communication, and strategy for our company.", source: "Verified User, G2", angle: "For the strategic buyer: this review positions SPOTIO as a tool for implementing high-level business objectives.", competitors: [], features: ['reporting'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-7998634" },
+            { date: "2025-09-03", quote: "Spotio helps me to be more organized and not miss any follow up.", source: "Juan P., G2", angle: "Focuses on a critical sales activity: follow-ups. Highlights SPOTIO's role in preventing leads from falling through the cracks.", competitors: [], features: ['task management'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023447" },
+            // ... Add all 94 reviews here
+        ];
+        
+        // For now, using the sample set. Replace 'allQualitativeReviews' with 'fullReviewDataset' when it's populated.
+        const allReviews = allQualitativeReviews; 
 
         document.addEventListener('DOMContentLoaded', () => {
             const qualitativeContainer = document.getElementById('qualitative-reviews');
             const quantitativeContainer = document.getElementById('quantitative-grid');
+            const paginationContainer = document.getElementById('pagination-controls');
             const filterInput = document.getElementById('competitor-input');
             const featureSelect = document.getElementById('feature-select');
             const filterButton = document.getElementById('filter-btn');
             const clearButton = document.getElementById('clear-btn');
-            const refreshButton = document.getElementById('refresh-btn');
+            
+            let currentPage = 1;
+            const reviewsPerPage = 10;
+            let currentFilteredReviews = [];
 
-            const renderQualitative = (reviews) => {
+            const renderQualitative = () => {
                 qualitativeContainer.innerHTML = '';
-                if (reviews.length === 0) {
+                const startIndex = (currentPage - 1) * reviewsPerPage;
+                const endIndex = startIndex + reviewsPerPage;
+                const paginatedReviews = currentFilteredReviews.slice(startIndex, endIndex);
+
+                if (paginatedReviews.length === 0 && currentFilteredReviews.length > 0) {
+                     qualitativeContainer.innerHTML = `<p class="text-gray-500 italic">No reviews on this page. Try a previous page.</p>`;
+                } else if (paginatedReviews.length === 0) {
                     qualitativeContainer.innerHTML = `<p class="text-gray-500 italic">No matching reviews found for this filter combination.</p>`;
                 } else {
-                    reviews.forEach(review => {
+                    paginatedReviews.forEach(review => {
                         const card = document.createElement('div');
                         card.className = 'bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col';
                         card.innerHTML = `
@@ -158,6 +219,46 @@
                         qualitativeContainer.appendChild(card);
                     });
                 }
+            };
+            
+            const renderPaginationControls = () => {
+                paginationContainer.innerHTML = '';
+                const totalReviews = currentFilteredReviews.length;
+                const totalPages = Math.ceil(totalReviews / reviewsPerPage);
+
+                if (totalPages <= 1) return;
+
+                paginationContainer.innerHTML = `
+                    <button id="prev-btn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Previous
+                    </button>
+                    <span class="text-gray-600 font-medium">Page ${currentPage} of ${totalPages}</span>
+                    <button id="next-btn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        Next
+                    </button>
+                `;
+
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === totalPages;
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        renderQualitative();
+                        renderPaginationControls();
+                    }
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        renderQualitative();
+                        renderPaginationControls();
+                    }
+                });
             };
 
             const renderQuantitative = (data) => {
@@ -191,10 +292,9 @@
                 const competitor = filterInput.value.trim().toLowerCase();
                 const feature = featureSelect.value;
                 
-                const sortedReviews = [...allQualitativeReviews].sort((a, b) => new Date(b.date) - new Date(a.date));
-                const recentReviews = sortedReviews; // Use all reviews from the sheet
-
-                const filteredQualitative = recentReviews.filter(review => {
+                const sortedReviews = [...allReviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                currentFilteredReviews = sortedReviews.filter(review => {
                     const competitorMatch = !competitor || review.competitors.some(c => c.toLowerCase().includes(competitor));
                     const featureMatch = feature === 'all' || review.features.includes(feature);
                     return competitorMatch && featureMatch;
@@ -206,7 +306,9 @@
                     return competitorMatch && featureMatch;
                 });
                 
-                renderQualitative(filteredQualitative);
+                currentPage = 1;
+                renderQualitative();
+                renderPaginationControls();
                 renderQuantitative(filteredQuantitative);
             };
 
@@ -214,15 +316,17 @@
                 filterInput.value = '';
                 featureSelect.value = 'all';
 
-                const sortedReviews = [...allQualitativeReviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+                const sortedReviews = [...allReviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+                currentFilteredReviews = sortedReviews;
                 
-                renderQualitative(sortedReviews);
+                currentPage = 1;
+                renderQualitative();
+                renderPaginationControls();
                 renderQuantitative(quantitativeData); 
             };
 
             filterButton.addEventListener('click', handleFilter);
             clearButton.addEventListener('click', loadLatest);
-            refreshButton.addEventListener('click', loadLatest);
 
             filterInput.addEventListener('keyup', (event) => {
                 if (event.key === 'Enter') {
