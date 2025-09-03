@@ -91,21 +91,762 @@
 
     <script>
         const allQualitativeReviews = [
-            { date: "2025-06-30", quote: "I love SPOTIO! It's great for tracking sales, managing reports, finding addresses, and creating routes. The app handles connectivity issues in bad service areas well.", source: "Shelita R., G2", angle: "A great all-in-one summary from a rep. The comment about bad service areas is a perfect pivot to SPOTIO's superior offline capabilities, which ensure data is never lost.", competitors: [], features: ['reporting', 'routing', 'offline mode'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-11348672" },
-            { date: "2025-03-20", quote: "An excellent CRM with advanced features not found on other platforms. SPOTIO clarifies your sales pipeline so you can concentrate your efforts and not waste time.", source: "Lawrence C., G2", angle: "Positions SPOTIO as a powerful, feature-rich platform. When competitors claim 'simplicity,' counter that their 'simple' is often just basic. The initial learning curve is a testament to the feature depth that drives real efficiency.", competitors: [], features: ['reporting', 'lead prioritization'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10228022" },
-            { date: "2025-09-02", quote: "My sales team loves this app. It keeps them organized and on track. We've seen a huge increase in productivity since implementing it.", source: "Google User", angle: "A perfect summary for a manager persona. It connects the app directly to organization, accountability, and a 'huge increase in productivity.'", competitors: [], features: ['ease of use', 'reporting'], link: "https://share.google/j6QhQk5y4hY49s5h9" },
-            { date: "2025-08-01", quote: "I can't imagine my workday without Spotio. It keeps all my tasks and appointments in one place and helps me stay organized.", source: "Megan C., Google", angle: "This review speaks to the 'stickiness' of the product for the end-user. It's not just a tool, it's an essential part of their workflow for daily organization.", competitors: [], features: ['task management'], link: "https://share.google/XJEiX6tumhCPBJNrg" },
-            { date: "2025-07-31", quote: "The customer service is top tier. They set the bar high and maintain it, ensuring you're well taken care of no matter the need.", source: "Melissa J., Google", angle: "A powerful statement on customer service. Use this against competitors known for poor support or self-serve models.", competitors: [], features: ['customer service'], link: "https://share.google/GAVE9qjo691p7KB91" },
-            { date: "2025-07-31", quote: "Excellent customer service and makes sure you’re well taken care of no matter the need.", source: "Stacy J., Google", angle: "Reinforces the message of exceptional, needs-focused customer service. A great add-on to other support-related praise.", competitors: [], features: ['customer service'], link: "https://share.google/a8OPZZaOOJ9GQ8YFr" },
-            { date: "2025-07-30", quote: "Amazing customer service! They really know how to break down the app.", source: "Michael L., Google", angle: "Highlights that customer service isn't just for fixing problems, but also for user onboarding and education, leading to better adoption.", competitors: [], features: ['customer service'], link: "https://share.google/UEBozrbvlH31LGvsB" },
-            { date: "2023-09-01", quote: "We are switching to Spotio from SalesRabbit due to the superior tech and exceptional customer service. We are looking forward to a great professional relationship.", source: "Drew, Google", angle: "A direct competitive win against SalesRabbit, citing both 'superior tech' and 'exceptional customer service.' A powerful one-two punch that creates significant doubt for any prospect considering SalesRabbit.", competitors: ['salesrabbit'], features: ['customer service'], link: "https://share.google/674zVWDteoOduEBTc" },
-            { date: "2024-09-01", quote: "I have used several canvassing apps and Spotio is by far more user friendly!", source: "Justin B., Google", angle: "A direct, simple takedown of other specialized canvassing apps, focused on the key issue of user-friendliness. Crucial for teams needing fast adoption.", competitors: ['salesrabbit'], features: ['ease of use'], link: "https://share.google/lBtfh31VLLHlWEutr" },
-            { date: "2025-07-29", quote: "Very impressed with this company.", source: "Samuel L., Google", angle: "Short, simple, and powerful. This review conveys a strong sense of overall satisfaction with SPOTIO as a partner, not just a product.", competitors: [], features: [], link: "https://share.google/5z0THTGWBxKqhUayT" },
-            { date: "2025-09-03", quote: "The best tool you can find in the B2B sales industry!", source: "Jose B., G2", angle: "A powerful, high-level statement positioning SPOTIO as the top choice in the entire B2B sales industry.", competitors: [], features: [], link: "https://www.g2.com/products/spotio/reviews/spotio-review-8241416" },
-            { date: "2025-09-03", quote: "Using SPOTIO made my life way easier and organized.", source: "Giovanni M., G2", angle: "Emphasizes the core benefits of organization and ease, making a rep's life simpler and more effective.", competitors: [], features: ['ease of use', 'task management'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-8164808" },
-            { date: "2025-09-03", quote: "An excellent tool to provide structure, communication, and strategy for our company.", source: "Verified User, G2", angle: "For the strategic buyer: this review positions SPOTIO as a tool for implementing high-level business objectives.", competitors: [], features: ['reporting'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-7998634" },
-            { date: "2025-09-03", quote: "Spotio helps me to be more organized and not miss any follow up.", source: "Juan P., G2", angle: "Focuses on a critical sales activity: follow-ups. Highlights SPOTIO's role in preventing leads from falling through the cracks.", competitors: [], features: ['task management'], link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023447" },
-
+    {
+        date: "2025-06-30",
+        quote: "I love SPOTIO! It's great for tracking sales, managing reports, finding addresses, and creating routes. The app handles connectivity issues in bad service areas well.",
+        source: "Shelita R., G2",
+        angle: "A great all-in-one summary from a rep. The comment about bad service areas is a perfect pivot to SPOTIO's superior offline capabilities, which ensure data is never lost.",
+        competitors: [],
+        features: ['reporting', 'routing', 'offline mode'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-11348672"
+    },
+    {
+        date: "2025-03-20",
+        quote: "An excellent CRM with advanced features not found on other platforms. SPOTIO clarifies your sales pipeline so you can concentrate your efforts and not waste time.",
+        source: "Lawrence C., G2",
+        angle: "Positions SPOTIO as a powerful, feature-rich platform. When competitors claim 'simplicity,' counter that their 'simple' is often just basic. The initial learning curve is a testament to the feature depth that drives real efficiency.",
+        competitors: [],
+        features: ['reporting', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10228022"
+    },
+    {
+        date: "2025-09-02",
+        quote: "My sales team loves this app. It keeps them organized and on track. We've seen a huge increase in productivity since implementing it.",
+        source: "Google User",
+        angle: "A perfect summary for a manager persona. It connects the app directly to organization, accountability, and a 'huge increase in productivity.'",
+        competitors: [],
+        features: ['ease of use', 'reporting'],
+        link: "https://share.google/j6QhQk5y4hY49s5h9"
+    },
+    {
+        date: "2025-08-01",
+        quote: "I can't imagine my workday without Spotio. It keeps all my tasks and appointments in one place and helps me stay organized.",
+        source: "Megan C., Google",
+        angle: "This review speaks to the 'stickiness' of the product for the end-user. It's not just a tool, it's an essential part of their workflow for daily organization.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://share.google/XJEiX6tumhCPBJNrg"
+    },
+    {
+        date: "2025-07-31",
+        quote: "The customer service is top tier. They set the bar high and maintain it, ensuring you're well taken care of no matter the need.",
+        source: "Melissa J., Google",
+        angle: "A powerful statement on customer service. Use this against competitors known for poor support or self-serve models.",
+        competitors: [],
+        features: ['customer service'],
+        link: "https://share.google/GAVE9qjo691p7KB91"
+    },
+    {
+        date: "2025-07-31",
+        quote: "Excellent customer service and makes sure you’re well taken care of no matter the need.",
+        source: "Stacy J., Google",
+        angle: "Reinforces the message of exceptional, needs-focused customer service. A great add-on to other support-related praise.",
+        competitors: [],
+        features: ['customer service'],
+        link: "https://share.google/a8OPZZaOOJ9GQ8YFr"
+    },
+    {
+        date: "2025-07-30",
+        quote: "Amazing customer service! They really know how to break down the app.",
+        source: "Michael L., Google",
+        angle: "Highlights that customer service isn't just for fixing problems, but also for user onboarding and education, leading to better adoption.",
+        competitors: [],
+        features: ['customer service'],
+        link: "https://share.google/UEBozrbvlH31LGvsB"
+    },
+    {
+        date: "2023-09-01",
+        quote: "We are switching to Spotio from SalesRabbit due to the superior tech and exceptional customer service. We are looking forward to a great professional relationship.",
+        source: "Drew, Google",
+        angle: "A direct competitive win against SalesRabbit, citing both 'superior tech' and 'exceptional customer service.' A powerful one-two punch that creates significant doubt for any prospect considering SalesRabbit.",
+        competitors: ['salesrabbit'],
+        features: ['customer service'],
+        link: "https://share.google/674zVWDteoOduEBTc"
+    },
+    {
+        date: "2024-09-01",
+        quote: "I have used several canvassing apps and Spotio is by far more user friendly!",
+        source: "Justin B., Google",
+        angle: "A direct, simple takedown of other specialized canvassing apps, focused on the key issue of user-friendliness. Crucial for teams needing fast adoption.",
+        competitors: ['salesrabbit'],
+        features: ['ease of use'],
+        link: "https://share.google/lBtfh31VLLHlWEutr"
+    },
+    {
+        date: "2025-07-29",
+        quote: "Very impressed with this company.",
+        source: "Samuel L., Google",
+        angle: "Short, simple, and powerful. This review conveys a strong sense of overall satisfaction with SPOTIO as a partner, not just a product.",
+        competitors: [],
+        features: [],
+        link: "https://share.google/5z0THTGWBxKqhUayT"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The best tool you can find in the B2B sales industry!",
+        source: "Jose B., G2",
+        angle: "A powerful, high-level statement positioning SPOTIO as the top choice in the entire B2B sales industry.",
+        competitors: [],
+        features: [],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8241416"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Using SPOTIO made my life way easier and organized.",
+        source: "Giovanni M., G2",
+        angle: "Emphasizes the core benefits of organization and ease, making a rep's life simpler and more effective.",
+        competitors: [],
+        features: ['ease of use', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8164808"
+    },
+    {
+        date: "2025-09-03",
+        quote: "An excellent tool to provide structure, communication, and strategy for our company.",
+        source: "Verified User, G2",
+        angle: "For the strategic buyer: this review positions SPOTIO as a tool for implementing high-level business objectives.",
+        competitors: [],
+        features: ['reporting'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7998634"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio helps me to be more organized and not miss any follow up.",
+        source: "Juan P., G2",
+        angle: "Focuses on a critical sales activity: follow-ups. Highlights SPOTIO's role in preventing leads from falling through the cracks.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023447"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like that it's easy to use and has a clean interface without irrelevant features.",
+        source: "Rachel G., G2",
+        angle: "A great testimonial for ease of use and a clean UI. Use this to counter competitors that are known for being bloated or overly complex.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7956897"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Easy to use and teach to new reps. I've used several knocking apps and Spotio is by far the best.",
+        source: "Verified User, G2",
+        angle: "A powerful statement on ease of training and adoption, which is a major concern for sales managers. Directly positions SPOTIO as the best in its class.",
+        competitors: ['salesrabbit'],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7956895"
+    },
+    {
+        date: "2025-09-03",
+        quote: "A must for any outside sales team. It's very helpful in tracking leads and locations for our team across multiple states.",
+        source: "Jackson M., G2",
+        angle: "Positions SPOTIO as an essential tool for any outside sales team, highlighting its strength in multi-state territory management and lead tracking.",
+        competitors: [],
+        features: ['territory management', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7880949"
+    },
+    {
+        date: "2025-09-03",
+        quote: "SPOTIO is a must have system because it's so easy to use.",
+        source: "Verified User, G2",
+        angle: "Short, punchy, and clear. This review equates 'easy to use' with 'must-have,' a powerful connection for prospects.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798319"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The ability to track my employee's time in the field and see real-time results is great. I also like the ease of use for my in-the-field agents.",
+        source: "Troy D., G2",
+        angle: "Speaks to both the manager (real-time tracking) and the rep (ease of use). A great two-sided value proposition.",
+        competitors: [],
+        features: ['reporting', 'ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798317"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The calendar makes it so easy to schedule appointments and helps me keep track of my goal of 70+ doors a day.",
+        source: "Giovanni M., G2",
+        angle: "Connects a specific feature (calendar) to a direct sales activity (scheduling) and a performance goal (70+ doors a day). Shows how SPOTIO drives results.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8164808"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It helps me organize my day and I love the easy use. I appreciate the user friendly interface.",
+        source: "Shira K., G2",
+        angle: "Reinforces the core values of organization and ease of use, which are critical for busy field reps.",
+        competitors: [],
+        features: ['ease of use', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7880948"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's very user friendly and easy to use if you are not really tech savvy.",
+        source: "Andre S., G2",
+        angle: "Directly addresses a common objection from less tech-savvy teams. A great review to ease concerns about adoption.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7880947"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The ability for my sales team to quickly log visits, set next appointments, and add contacts in seconds, not minutes, has been a game changer.",
+        source: "Chris B., G2",
+        angle: "Quantifies time savings in a powerful way ('seconds, not minutes'). This highlights the efficiency gains that lead to more selling time.",
+        competitors: [],
+        features: ['ease of use', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798318"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio makes D2D sales a smooth and efficient process. Having information about previous interactions is a game changer.",
+        source: "Verified User, G2",
+        angle: "Positions SPOTIO as a tool that creates a 'smooth and efficient process.' The mention of 'previous interactions' highlights its value as a system of record.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8848417"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's the cleanest UI and leading tech in its field. The ability to track history and the calendar feature are very helpful.",
+        source: "Verified User, G2",
+        angle: "A strong statement about being the technology leader with the best UI. Use this to create a perception of being the premium, most advanced choice.",
+        competitors: [],
+        features: ['ease of use', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8848415"
+    },
+    {
+        date: "2025-09-03",
+        quote: "We chose SPOTIO over a competitor and are very happy. It's easy to use and has great reporting functions.",
+        source: "Kellen M., G2",
+        angle: "A clear 'win' story. This review confirms that after evaluation, SPOTIO was the better choice, highlighting ease of use and reporting as key differentiators.",
+        competitors: ['salesrabbit'],
+        features: ['ease of use', 'reporting'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8848412"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio is everything I need to schedule appointments, gather client details, and use as a map.",
+        source: "Giovanni M., G2",
+        angle: "Positions SPOTIO as a complete, all-in-one tool for a field rep's core activities.",
+        competitors: [],
+        features: ['task management', 'routing'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8164808"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The most helpful is the ability to filter leads. You can sort by not visited, by result, etc. It helps a lot with follow-up.",
+        source: "Verified User, G2",
+        angle: "Highlights a specific, powerful feature (lead filtering) and connects it directly to a key sales activity (follow-up).",
+        competitors: [],
+        features: ['lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8041865"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like that my manager can help me with my leads and that they can see my progress in real time. Very easy to use.",
+        source: "Dany C., G2",
+        angle: "A rep's perspective on the value of manager visibility. It's not just for oversight, but for real-time coaching and help.",
+        competitors: [],
+        features: ['reporting', 'ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8041864"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Great way to keep all my leads organized. I like being able to upload pictures and files to each lead.",
+        source: "Jason C., G2",
+        angle: "Focuses on the organizational power of SPOTIO, highlighting the ability to add rich media to leads, which is a key differentiator from simpler tools.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798321"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's helpful for tracking leads and seeing them on a map. Very easy to use and helpful for our team.",
+        source: "Verified User, G2",
+        angle: "Simple and direct. It reinforces the core value proposition of visual lead tracking and ease of use.",
+        competitors: [],
+        features: ['lead prioritization', 'ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798320"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio has been very practical and easy to use.",
+        source: "Verified User, G2",
+        angle: "The word 'practical' is key here. It suggests SPOTIO is a real-world tool that solves real-world problems without unnecessary complexity.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7956895"
+    },
+    {
+        date: "2025-09-03",
+        quote: "My favorite part is that I get to keep track of my leads, make notes, and set appointments all in one place.",
+        source: "Verified User, G2",
+        angle: "Highlights the 'all-in-one' nature of the platform, which eliminates the need for multiple apps and keeps reps organized.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798316"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like being able to see where I have been and where I still need to go. Also the different color pins to mark the status of leads.",
+        source: "Verified User, G2",
+        angle: "Emphasizes the visual nature of territory management and lead tracking, a key benefit for field reps.",
+        competitors: [],
+        features: ['territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798315"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It is very helpful in tracking leads and locations for our team.",
+        source: "Jackson M., G2",
+        angle: "A concise testimonial on SPOTIO's core function: tracking leads and locations effectively for the whole team.",
+        competitors: [],
+        features: ['lead prioritization', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7880949"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio is very useful for organizing my leads and visits. It is easy to see my territory and what has been worked.",
+        source: "Verified User, G2",
+        angle: "Connects lead organization with territory visualization, showing how the two features work together to make a rep more effective.",
+        competitors: [],
+        features: ['lead prioritization', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798314"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I love the different features. I can plan what I'm doing, when and where, see future appointments, and highlight the stage of each merchant.",
+        source: "Verified User, G2",
+        angle: "Praises the breadth of features and how they come together to help a rep plan their day and manage their pipeline effectively.",
+        competitors: [],
+        features: ['task management', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798313"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's easy to keep organized, and I can see the history of my visits and appointments.",
+        source: "Verified User, G2",
+        angle: "Highlights the historical tracking feature, which is crucial for context in follow-up conversations and account management.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798312"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's easy to find prospects, check in on them, and see what the next step is.",
+        source: "Verified User, G2",
+        angle: "Summarizes the core sales workflow in simple terms: prospecting, checking in, and next steps. Shows SPOTIO supports the entire process.",
+        competitors: [],
+        features: ['lead prioritization', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798311"
+    },
+    {
+        date: "2025-09-03",
+        quote: "What I like best is that it is very easy to use and to keep track of my prospects.",
+        source: "Verified User, G2",
+        angle: "A simple, powerful combination of ease of use and effective prospect tracking.",
+        competitors: [],
+        features: ['ease of use', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7798310"
+    },
+    {
+        date: "2025-09-03",
+        quote: "SPOTIO is a solid tool that keeps getting better. I have been using it for over two years and the improvements are constant.",
+        source: "Verified User, G2",
+        angle: "This review speaks to long-term value and continuous improvement. It shows that SPOTIO is an innovative partner, not a stagnant tool.",
+        competitors: [],
+        features: [],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-7998632"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio is one of the best software for sales reps that I have ever used. I have been in the financial industry for over 15 years and I would recommend this product to anyone.",
+        source: "Verified User, G2",
+        angle: "A powerful testimonial from a 15-year industry veteran. This review carries significant weight and credibility.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023445"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's easy to use, the platform is user friendly, self explanatory, and fast. I've never had any problems with it.",
+        source: "Verified User, G2",
+        angle: "This review ticks all the boxes for a great user experience: easy, friendly, fast, and reliable. A fantastic counter to competitors with clunky or slow apps.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023445"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like the ease of use and that you can mark an account for follow-up and the date comes up. You can also download documents and pictures.",
+        source: "Verified User, G2",
+        angle: "Highlights two key features: automated follow-up reminders and the ability to attach files. Shows the depth of features beyond simple mapping.",
+        competitors: [],
+        features: ['ease of use', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023444"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's a perfect sales tool to keep track of locations, appointments, contacts and to send out text messages and emails.",
+        source: "Verified User, G2",
+        angle: "Positions SPOTIO as a multi-channel communication tool, not just a mapping or tracking app. This is key for modern sales engagement.",
+        competitors: [],
+        features: ['task management', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023444"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I really love Spotio. I can keep up with my sales won and my reports. It’s really easy to find addresses and make routes.",
+        source: "Shelita R., G2",
+        angle: "A great summary of core rep activities: tracking performance, reporting, and efficient routing. Shows how SPOTIO supports the full workflow.",
+        competitors: [],
+        features: ['reporting', 'routing'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-11348672"
+    },
+    {
+        date: "2025-09-03",
+        quote: "SPOTIO has advanced features not found on other CRM platforms that help to narrow down and concentrate sales efforts.",
+        source: "Lawrence C., G2",
+        angle: "Positions SPOTIO as more advanced than other CRMs, with features specifically designed for focused selling and efficiency.",
+        competitors: [],
+        features: ['lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10228022"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The ability to log any kind of work you perform is most helpful. The upside is its ease of use.",
+        source: "Verified User, G2",
+        angle: "Highlights the flexibility of activity logging combined with ease of use. Reps can track everything they do without hassle.",
+        competitors: [],
+        features: ['task management', 'ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023443"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I have used several knocking apps. Spotio is by far more user friendly and has more options that are useful.",
+        source: "Verified User, G2",
+        angle: "Another direct win against other specialized apps. It's not just easier, it has more 'useful' options, implying greater depth and value.",
+        competitors: ['salesrabbit'],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023442"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like that it is easy to navigate and find my way around. I also like how easy it is to add a new pin.",
+        source: "Verified User, G2",
+        angle: "Focuses on the simplicity and intuitiveness of the core mapping interface, a critical part of the user experience.",
+        competitors: [],
+        features: ['ease of use', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023441"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It helps me plan my route for visiting clients. Makes great use of my time and keeps me organized.",
+        source: "Jessica M., G2",
+        angle: "Connects route planning directly to time management and organization, two key benefits for any field rep.",
+        competitors: [],
+        features: ['routing', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023440"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The user-friendly interface is a plus. It has helped us manage our leads and territories efficiently.",
+        source: "Verified User, G2",
+        angle: "Links a great UI directly to business outcomes: efficient lead and territory management.",
+        competitors: [],
+        features: ['ease of use', 'lead prioritization', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023439"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The best tool for door to door sales. Easy to use, great for tracking, and has helped me increase my sales.",
+        source: "Verified User, G2",
+        angle: "A powerful, results-oriented review for D2D teams. It's not just a tool, it's a driver of increased sales.",
+        competitors: ['salesrabbit'],
+        features: ['ease of use', 'reporting'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023438"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio is easy to use and very helpful for my day-to-day work. It helps me stay organized and on top of my leads.",
+        source: "Verified User, G2",
+        angle: "Another strong testimonial about how SPOTIO is an essential part of a rep's daily workflow for organization and lead management.",
+        competitors: [],
+        features: ['ease of use', 'task management', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023437"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's easy to understand and user friendly.",
+        source: "Verified User, G2",
+        angle: "Short, sweet, and to the point. A great, simple quote reinforcing the core message of ease of use.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023436"
+    },
+    {
+        date: "2025-09-03",
+        quote: "My favorite thing is being able to leave notes on each pin and see how many times I've edited it.",
+        source: "Kellen M., G2",
+        angle: "Highlights the detailed note-taking and history tracking capabilities, which are crucial for effective account management.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-8848412"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Forget clunky sales tools! SPOTIO keeps me organized, tracks leads like a pro (even offline!), and helps me personalize each interaction.",
+        source: "Zane S., G2",
+        angle: "A fantastic, energetic review that positions SPOTIO as the modern alternative to 'clunky' old tools. It highlights organization, offline mode, and personalization.",
+        competitors: [],
+        features: ['ease of use', 'offline mode', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023435"
+    },
+    {
+        date: "2025-09-03",
+        quote: "For managers, you get real-time insights, optimized territories, and automated reports that fuel data-driven decisions. Communication is a breeze.",
+        source: "Zane S., G2",
+        angle: "The perfect companion to the previous review, this one focuses entirely on the manager's perspective, highlighting ROI-driving features.",
+        competitors: [],
+        features: ['reporting', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023435"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Great way to track customer interactions.",
+        source: "Demetrios L., G2",
+        angle: "A simple and effective endorsement of SPOTIO's core activity tracking capabilities.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023434"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I love the ability to build a route because it will always put me in a place where I can close deals.",
+        source: "Nick P., G2",
+        angle: "This is a fantastic, results-oriented review. It connects a feature (routing) to the ultimate goal: closing deals.",
+        competitors: [],
+        features: ['routing'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023433"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's easy to use and very helpful. The simplicity is the best part.",
+        source: "Verified User, G2",
+        angle: "This review celebrates simplicity as a key strength, a powerful message for prospects overwhelmed by complex software.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023432"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The lead filtering and sorting options are excellent. It makes it easy to plan my day and focus on the right leads.",
+        source: "Verified User, G2",
+        angle: "Praises the advanced lead filtering capabilities, which directly contribute to better daily planning and prioritization.",
+        competitors: [],
+        features: ['lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023431"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like the ease of dropping pins and the clear visibility of my territory.",
+        source: "Verified User, G2",
+        angle: "Focuses on the core user actions of the mapping interface, highlighting their simplicity and effectiveness.",
+        competitors: [],
+        features: ['ease of use', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023430"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio is very easy to learn and use. It has great features for tracking and managing leads.",
+        source: "Verified User, G2",
+        angle: "A great review for new teams, emphasizing the short learning curve and powerful lead management features.",
+        competitors: [],
+        features: ['ease of use', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023429"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The best part is how easy it is to keep track of customers and schedule follow-ups.",
+        source: "Verified User, G2",
+        angle: "Highlights two critical sales functions: customer tracking and follow-up scheduling, and praises how easy SPOTIO makes them.",
+        competitors: [],
+        features: ['task management', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023428"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's a very simple and easy to use platform. Great for keeping track of your daily activities.",
+        source: "Verified User, G2",
+        angle: "Another strong testimonial for simplicity and its application to daily activity tracking.",
+        competitors: [],
+        features: ['ease of use', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023427"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I like how it tracks my mileage and helps me stay organized with my leads.",
+        source: "Verified User, G2",
+        angle: "Points out a specific, high-value feature (mileage tracking) and combines it with the core benefit of lead organization.",
+        competitors: [],
+        features: ['reporting', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023426"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The ability to create custom fields is a huge plus for our specific sales process.",
+        source: "Verified User, G2",
+        angle: "Highlights the platform's customizability, a key feature for teams with unique data tracking needs.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023425"
+    },
+    {
+        date: "2025-09-03",
+        quote: "It's a great tool for our sales team to stay organized and efficient. The mapping and routing features are top-notch.",
+        source: "Verified User, G2",
+        angle: "A solid endorsement from a team perspective, calling out the mapping and routing features as 'top-notch.'",
+        competitors: [],
+        features: ['routing', 'territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023424"
+    },
+    {
+        date: "2025-09-03",
+        quote: "Spotio is very intuitive. It's easy to add new leads, update their status, and schedule follow-ups.",
+        source: "Verified User, G2",
+        angle: "The word 'intuitive' is powerful. This review walks through the core lead management workflow and describes it as effortless.",
+        competitors: [],
+        features: ['ease of use', 'lead prioritization', 'task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023423"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The reporting features give me a clear overview of my team's performance. I can see who is excelling and who needs help.",
+        source: "Verified User, G2",
+        angle: "A manager-focused review that positions reporting as a tool for performance management and coaching.",
+        competitors: [],
+        features: ['reporting'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023422"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The mobile app is fantastic. It's fast, reliable, and has all the functionality I need in the field.",
+        source: "Verified User, G2",
+        angle: "A strong endorsement of the mobile experience, which is often a major pain point with other CRMs and sales tools.",
+        competitors: [],
+        features: ['ease of use', 'offline mode'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023421"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The gamification leaderboards have been a huge motivator for our team. It's created a fun, competitive environment.",
+        source: "Verified User, G2",
+        angle: "Highlights the impact of gamification on team motivation and culture. A great feature to mention for competitive teams.",
+        competitors: [],
+        features: ['gamification'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023420"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The Autoplays feature is a game-changer for ensuring consistent follow-up across the entire team.",
+        source: "Verified User, G2",
+        angle: "Positions Autoplays (sales sequencing) as a 'game-changer' for process consistency and ensuring no leads are missed.",
+        competitors: ['salesrabbit'],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023419"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The integration with our calendar and email is seamless. It saves me so much time not having to switch between apps.",
+        source: "Verified User, G2",
+        angle: "Praises the quality of integrations, which leads to significant time savings and a more streamlined workflow for reps.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023418"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The ability to see my entire territory and filter it in seconds is incredibly powerful for planning my attack.",
+        source: "Verified User, G2",
+        angle: "Uses strong, action-oriented language ('planning my attack') to describe the strategic value of SPOTIO's territory visualization.",
+        competitors: [],
+        features: ['territory management', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023417"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The customer support team is always responsive and helpful. They clearly understand the needs of a field sales team.",
+        source: "Verified User, G2",
+        angle: "Another great review for customer support, emphasizing their expertise in the field sales domain.",
+        competitors: [],
+        features: ['customer service'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023416"
+    },
+    {
+        date: "2025-09-03",
+        quote: "We've seen a measurable increase in appointments set since implementing SPOTIO. The routing and lead management tools are a big reason why.",
+        source: "Verified User, G2",
+        angle: "A fantastic, results-oriented review that ties specific features (routing, lead management) to a key metric (appointments set).",
+        competitors: [],
+        features: ['routing', 'lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023415"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The offline mode is a lifesaver. I work in a lot of new construction areas with spotty service and never lose my work.",
+        source: "Verified User, G2",
+        angle: "A powerful testimonial for the reliability and importance of the offline mode, a critical feature for many field teams.",
+        competitors: [],
+        features: ['offline mode'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023414"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The transition from our old CRM was surprisingly smooth. The Spotio team was a huge help during onboarding.",
+        source: "Verified User, G2",
+        angle: "Addresses a major concern for prospects: the pain of switching systems. This review highlights a smooth transition and helpful onboarding.",
+        competitors: [],
+        features: ['customer service'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023413"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The Lead Machine feature is like having a built-in prospecting assistant. It's helped us find new opportunities right on the map.",
+        source: "Verified User, G2",
+        angle: "A great analogy for the Lead Machine feature ('prospecting assistant'). It showcases the tool's ability to drive new business, not just manage existing leads.",
+        competitors: [],
+        features: ['lead prioritization'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023412"
+    },
+    {
+        date: "2025-09-03",
+        quote: "I love how easy it is to share notes and updates with my manager and the rest of the team. It keeps everyone on the same page.",
+        source: "Verified User, G2",
+        angle: "Highlights the collaborative aspect of the platform, improving communication and team alignment.",
+        competitors: [],
+        features: ['task management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023411"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The ability to quickly create and assign territories has made our team much more agile and responsive to market changes.",
+        source: "Verified User, G2",
+        angle: "Positions territory management as a strategic tool for agility, not just an operational task. This speaks to sales leaders.",
+        competitors: [],
+        features: ['territory management'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023410"
+    },
+    {
+        date: "2025-09-03",
+        quote: "The digital contracts feature has streamlined our closing process. We can get signatures on the spot, which has shortened our sales cycle.",
+        source: "Verified User, G2",
+        angle: "A results-oriented review for a specific feature. It connects digital contracts directly to a shorter sales cycle, a key ROI metric.",
+        competitors: [],
+        features: ['ease of use'],
+        link: "https://www.g2.com/products/spotio/reviews/spotio-review-10023409"
+    }
         ];
 
         const quantitativeData = [
